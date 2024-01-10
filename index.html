@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income/Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="tracker">
+    <h2>Income/Expense Tracker</h2>
+
+    <div id="transactionButtons">
+        <button onclick="toggleFields('income')">Add Income</button>
+        <button onclick="toggleFields('expense')">Add Expense</button>
+    </div>
+
+    <div id="incomeFields" style="display: none;">
+        <label for="incomeInput">Income:</label>
+        <input type="number" id="incomeInput" placeholder="Enter income" onkeydown="handleEnter(event, 'income')">
+        <button onclick="addTransaction('income')">Add Income</button>
+    </div>
+    
+    <div id="expenseFields" style="display: none;">
+        <label for="expenseInput">Expense:</label>
+        <input type="number" id="expenseInput" placeholder="Enter expense" onkeydown="handleEnter(event, 'expense')">
+        <button onclick="addTransaction('expense')">Add Expense</button>
+    </div>
+
+    <div id="summary">
+        <p>Total Income: <span id="totalIncome">$0</span></p>
+        <p>Total Expenses: <span id="totalExpense">$0</span></p>
+        <p>Balance: <span id="balance">$0</span></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
